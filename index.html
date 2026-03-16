@@ -3,7 +3,18 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Light Your Own Fire: How to Find Purpose in Your Life</title>
+<title>Light Your Own Fire – How to Find Purpose in Your Life</title>
+<meta name="description" content="A practical guide to finding and living your purpose. By Charles Donoghue & Glenn Edley. 241 pages. PDF $5 or available on Amazon.">
+
+<!-- Open Graph -->
+<meta property="og:title" content="Light Your Own Fire – How to Find Purpose in Your Life">
+<meta property="og:description" content="A practical guide to finding and living your purpose. Not the fluffy kind. By Charles Donoghue & Glenn Edley.">
+<meta property="og:image" content="lyof-cover-2026.jpg">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://lightyourownfire.com">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="lyof-cover-2026.jpg">
+
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Anton&family=Barlow+Condensed:ital,wght@0,400;0,600;0,700;0,800;1,400&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=DM+Sans:wght@400;500&display=swap" rel="stylesheet">
@@ -19,6 +30,7 @@
     --heading-font: 'Barlow Condensed', sans-serif;
     --body-font: 'Libre Baskerville', Georgia, serif;
     --ui-font: 'DM Sans', sans-serif;
+    --col: 620px;
   }
 
   body {
@@ -30,7 +42,7 @@
     -webkit-font-smoothing: antialiased;
   }
 
-  /* HERO */
+  /* ── HERO ──────────────────────────────────────────────── */
   .hero {
     position: relative;
     min-height: 100vh;
@@ -99,17 +111,11 @@
   }
   .btn-primary:hover { opacity: 0.85; }
 
-  /* SHARED CONTAINER */
+  /* ── SHARED CONTAINER ──────────────────────────────────── */
   .container {
-    max-width: 740px;
+    max-width: var(--col);
     margin: 0 auto;
     width: 100%;
-  }
-
-  /* STORY */
-  .story {
-    background: var(--bg);
-    padding: 7rem 2rem;
   }
 
   .section-label {
@@ -122,120 +128,135 @@
     margin-bottom: 1.2rem;
   }
 
-  .story-inner { max-width: 680px; }
+  /* ── STORY (two-col with book cover) ───────────────────── */
+  .story {
+    background: var(--bg);
+    padding: 5rem 2rem;
+  }
+
+  .story .container {
+    max-width: 900px;
+    display: grid;
+    grid-template-columns: 1fr 260px;
+    gap: 3.5rem;
+    align-items: center;
+  }
 
   .story h2 {
     font-family: var(--heading-font);
-    font-size: clamp(2.2rem, 4vw, 3.2rem);
+    font-size: clamp(2rem, 3.5vw, 3rem);
     font-weight: 800;
     line-height: 1.1;
     color: var(--navy);
-    text-transform: none;
     letter-spacing: -0.01em;
-    margin-bottom: 1.6rem;
+    margin-bottom: 1.4rem;
   }
 
   .story p {
     font-family: var(--body-font);
     color: #333;
-    margin-bottom: 1.2rem;
-    font-size: 1.05rem;
+    margin-bottom: 1.1rem;
+    font-size: 1rem;
     line-height: 1.75;
   }
 
-  /* PULL QUOTE */
+  .story-cover {
+    width: 100%;
+    display: block;
+    box-shadow: 0 20px 60px rgba(0,0,0,0.25);
+  }
+
+  /* ── PULL QUOTE ────────────────────────────────────────── */
   .pull-quote {
     background: var(--bg);
     border-top: 1px solid #ddd5c8;
     border-bottom: 1px solid #ddd5c8;
-    padding: 5rem 2rem;
+    padding: 4.5rem 2rem;
     text-align: center;
   }
 
   .pull-quote blockquote {
     font-family: var(--body-font);
     font-style: italic;
-    font-size: clamp(1.4rem, 2.6vw, 2rem);
-    line-height: 1.45;
+    font-size: clamp(1.3rem, 2.4vw, 1.8rem);
+    line-height: 1.5;
     color: var(--text);
-    max-width: 820px;
+    max-width: 700px;
     margin: 0 auto;
   }
 
-  /* WHAT'S INSIDE */
+  /* ── WHAT'S INSIDE ─────────────────────────────────────── */
   .inside {
     background: #1c1c1c;
-    padding: 6rem 2rem;
+    padding: 5.5rem 2rem;
   }
 
+  .inside .container { max-width: 820px; }
   .inside .section-label { color: rgba(245,197,24,0.80); }
 
   .inside h2 {
     font-family: var(--title-font);
-    font-size: clamp(2rem, 3.5vw, 3rem);
+    font-size: clamp(1.8rem, 3vw, 2.6rem);
     color: #fff;
     text-transform: uppercase;
     letter-spacing: 0.02em;
-    margin-bottom: 3rem;
+    margin-bottom: 2.5rem;
     line-height: 1.05;
-    max-width: 600px;
   }
 
   .chapters {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 2rem 3rem;
-    max-width: 760px;
+    gap: 1.8rem 3rem;
   }
 
   .chapter-item {
     display: flex;
     align-items: flex-start;
-    gap: 1.1rem;
+    gap: 1rem;
   }
 
   .chapter-num {
     font-family: var(--title-font);
-    font-size: 2.4rem;
+    font-size: 2.2rem;
     color: var(--yellow);
     line-height: 1;
-    min-width: 1.8rem;
+    min-width: 1.6rem;
   }
 
   .chapter-text {
     font-family: var(--body-font);
-    font-size: 0.95rem;
+    font-size: 0.9rem;
     color: rgba(255,255,255,0.75);
-    padding-top: 0.4rem;
+    padding-top: 0.35rem;
     line-height: 1.5;
   }
 
-  /* THIS IS FOR YOU */
+  /* ── THIS IS FOR YOU ───────────────────────────────────── */
   .foryou {
     background: var(--bg);
-    padding: 6rem 2rem;
+    padding: 5.5rem 2rem;
   }
 
   .foryou h2 {
     font-family: var(--heading-font);
-    font-size: clamp(2rem, 3.5vw, 2.8rem);
+    font-size: clamp(1.8rem, 3vw, 2.6rem);
     font-weight: 800;
-    text-transform: none;
     letter-spacing: -0.01em;
     color: var(--navy);
-    margin-bottom: 2.2rem;
+    margin-bottom: 2rem;
     line-height: 1.1;
   }
 
-  .foryou ul { list-style: none; max-width: 100%; }
+  .foryou ul { list-style: none; }
 
   .foryou ul li {
     display: flex;
     gap: 1rem;
-    padding: 0.9rem 0;
+    padding: 0.85rem 0;
     border-bottom: 1px solid #ddd5c8;
     font-family: var(--body-font);
-    font-size: 1rem;
+    font-size: 0.98rem;
     color: #333;
     line-height: 1.55;
   }
@@ -251,26 +272,69 @@
     padding-top: 0.05rem;
   }
 
-  /* CTA BLOCK */
+  /* ── TESTIMONIALS ──────────────────────────────────────── */
+  .testimonials {
+    background: #1c1c1c;
+    padding: 5.5rem 2rem;
+  }
+
+  .testimonials .section-label { color: rgba(245,197,24,0.80); margin-bottom: 2.5rem; }
+
+  .testimonials .container { max-width: 820px; }
+
+  .testi-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+  }
+
+  .testi-card {
+    background: rgba(255,255,255,0.05);
+    border-left: 3px solid var(--yellow);
+    padding: 1.8rem 1.8rem 1.8rem 1.6rem;
+  }
+
+  .testi-card blockquote {
+    font-family: var(--body-font);
+    font-style: italic;
+    font-size: 0.95rem;
+    color: rgba(255,255,255,0.82);
+    line-height: 1.65;
+    margin-bottom: 1.2rem;
+  }
+
+  .testi-name {
+    font-family: var(--heading-font);
+    font-size: 0.85rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--yellow);
+  }
+
+  .testi-title {
+    font-family: var(--ui-font);
+    font-size: 0.8rem;
+    color: rgba(255,255,255,0.45);
+    margin-top: 0.2rem;
+  }
+
+  /* ── CTA BLOCK ─────────────────────────────────────────── */
   .cta-block {
     background: var(--navy);
-    padding: 7rem 2rem;
+    padding: 6rem 2rem;
   }
 
   .cta-block .container { text-align: center; }
 
   .cta-block h2 {
     font-family: var(--heading-font);
-    font-size: clamp(2rem, 4vw, 3.4rem);
+    font-size: clamp(1.8rem, 3.5vw, 3rem);
     font-weight: 800;
     color: #fff;
-    text-transform: none;
-    line-height: 1.15;
+    line-height: 1.2;
     letter-spacing: -0.01em;
-    margin-bottom: 2.8rem;
-    max-width: 580px;
-    margin-left: auto;
-    margin-right: auto;
+    margin-bottom: 2.5rem;
   }
 
   .cta-buttons {
@@ -296,15 +360,15 @@
 
   .cta-meta {
     font-family: var(--ui-font);
-    font-size: 0.9rem;
-    color: rgba(255,255,255,0.50);
+    font-size: 0.88rem;
+    color: rgba(255,255,255,0.45);
     letter-spacing: 0.05em;
   }
 
-  /* FOOTER */
+  /* ── FOOTER ────────────────────────────────────────────── */
   footer {
     background: #111;
-    padding: 1.8rem 6vw;
+    padding: 1.8rem 2rem;
     text-align: center;
   }
 
@@ -318,8 +382,14 @@
   footer a { color: rgba(255,255,255,0.5); text-decoration: none; }
   footer a:hover { color: #fff; }
 
-  @media (max-width: 600px) {
+  /* ── RESPONSIVE ────────────────────────────────────────── */
+  @media (max-width: 700px) {
+    .story .container {
+      grid-template-columns: 1fr;
+    }
+    .story-cover-col { order: -1; max-width: 200px; margin: 0 auto; }
     .chapters { grid-template-columns: 1fr; }
+    .testi-grid { grid-template-columns: 1fr; }
     .cta-buttons { flex-direction: column; align-items: center; }
   }
 </style>
@@ -337,14 +407,18 @@
   </div>
 </section>
 
-<!-- OPENING STORY -->
+<!-- STORY + BOOK COVER -->
 <section class="story">
   <div class="container">
-    <div class="story-inner">
+    <div class="story-text">
       <p class="section-label">Why this book exists</p>
       <h2>His ideas haven't gone anywhere.</h2>
       <p>I co-wrote this book with my friend Charles Donoghue. He passed away a few years ago. But his ideas haven't. This book keeps his voice alive.</p>
       <p>This is a practical guide to finding and living your purpose. Not the fluffy kind. The kind that changes how you show up every day.</p>
+      <p>Charles spent decades coaching people to find their fire. This book is what he taught.</p>
+    </div>
+    <div class="story-cover-col">
+      <img src="lyof-cover-2026.jpg" alt="Light Your Own Fire book cover" class="story-cover">
     </div>
   </div>
 </section>
@@ -352,7 +426,7 @@
 <!-- PULL QUOTE -->
 <section class="pull-quote">
   <blockquote>
-    "We have met thousands of others who want that fire. This book will show you what they know."
+    "We have met thousands of others who want that fire.<br>This book will show you what they know."
   </blockquote>
 </section>
 
@@ -360,7 +434,7 @@
 <section class="inside">
   <div class="container">
     <p class="section-label">What's inside</p>
-    <h2>241 pages. Everything<br>that actually matters.</h2>
+    <h2>241 pages. Everything that actually matters.</h2>
     <div class="chapters">
       <div class="chapter-item">
         <span class="chapter-num">1</span>
@@ -394,13 +468,34 @@
 <section class="foryou">
   <div class="container">
     <p class="section-label">This is for you if</p>
-    <h2>You're ready to be driven<br>by something bigger.</h2>
+    <h2>You're ready to be driven by something bigger.</h2>
     <ul>
       <li><span class="arrow">→</span><span>You want to be driven by something bigger than a to-do list</span></li>
       <li><span class="arrow">→</span><span>You feel busy but not purposeful</span></li>
       <li><span class="arrow">→</span><span>You've read motivational books that weren't written for you</span></li>
       <li><span class="arrow">→</span><span>You want something direct, practical, and short enough to finish</span></li>
+      <li><span class="arrow">→</span><span>You're tired of knowing what to do but not doing it</span></li>
+      <li><span class="arrow">→</span><span>You want to stop drifting and start deciding</span></li>
     </ul>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section class="testimonials">
+  <div class="container">
+    <p class="section-label">What people are saying</p>
+    <div class="testi-grid">
+      <div class="testi-card">
+        <blockquote>"A timely contribution to the literature for those wishing to take a quantum leap in human behaviour. You will learn how to find real purpose in your life."</blockquote>
+        <p class="testi-name">Dr Robert A. Brown</p>
+        <p class="testi-title">PhD, Dip. Clin. Psychol. — Psychologist</p>
+      </div>
+      <div class="testi-card">
+        <blockquote>"Charles and Glenn's message is a powerful one of hope. It guides us towards finding our purpose and passion — lighting the fire that drives us towards our goals."</blockquote>
+        <p class="testi-name">Allison Roe MBE</p>
+        <p class="testi-title">New York &amp; Boston Marathon Winner</p>
+      </div>
+    </div>
   </div>
 </section>
 
