@@ -3,10 +3,6 @@
 Landing page for the book *Light Your Own Fire: How to Find Purpose in Your Life* 
 by Charles Donoghue & Glenn Edley.
 
-## To do before going live
-- [ ] Replace hero background image with final generated image
-- [ ] Point domain lightyourownfire.com to hosting
-
 ## Key links
 - PDF purchase: https://glennedley.gumroad.com/l/lyof
 - Amazon print: https://a.co/d/0bWr7192
