@@ -365,6 +365,32 @@
     letter-spacing: 0.05em;
   }
 
+  /* ── MEET THE AUTHORS ──────────────────────────────────── */
+  .meet-authors {
+    background: var(--bg);
+    padding: 3rem 2rem;
+    text-align: center;
+    border-top: 1px solid #ddd5c8;
+    border-bottom: 1px solid #ddd5c8;
+  }
+
+  .meet-authors-link {
+    font-family: var(--ui-font);
+    font-size: 1rem;
+    font-weight: 500;
+    letter-spacing: 0.04em;
+    color: var(--navy);
+    text-decoration: none;
+    border-bottom: 2px solid var(--yellow);
+    padding-bottom: 2px;
+    transition: color 0.2s, border-color 0.2s;
+  }
+
+  .meet-authors-link:hover {
+    color: var(--yellow);
+    border-color: var(--navy);
+  }
+
   /* ── FOOTER ────────────────────────────────────────────── */
   footer {
     background: #111;
@@ -499,6 +525,13 @@
   </div>
 </section>
 
+<!-- MEET THE AUTHORS -->
+<section class="meet-authors">
+  <div class="container">
+    <a href="about.html" class="meet-authors-link">Meet the authors →</a>
+  </div>
+</section>
+
 <!-- CTA BLOCK -->
 <section class="cta-block">
   <div class="container">
@@ -513,7 +546,7 @@
 
 <!-- FOOTER -->
 <footer>
-  <p>© Glenn Edley · <a href="https://lightyourownfire.com">lightyourownfire.com</a></p>
+  <p>© Glenn Edley · <a href="https://lightyourownfire.com">lightyourownfire.com</a> · <a href="about.html">About the Authors</a></p>
 </footer>
 
 </body>
