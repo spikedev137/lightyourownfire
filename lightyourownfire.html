@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Light Your Own Fire – How to Find Purpose in Your Life</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Barlow+Condensed:ital,wght@0,400;0,600;0,700;0,800;1,400&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=DM+Sans:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --bg: #f5f0eb;
+    --navy: #1a2a5e;
+    --yellow: #f5c518;
+    --text: #1c1c1c;
+    --title-font: 'Anton', Impact, sans-serif;
+    --heading-font: 'Barlow Condensed', sans-serif;
+    --body-font: 'Libre Baskerville', Georgia, serif;
+    --ui-font: 'DM Sans', sans-serif;
+  }
+
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: var(--body-font);
+    font-size: 18px;
+    line-height: 1.7;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* HERO */
+  .hero {
+    position: relative;
+    min-height: 100vh;
+    display: flex;
+    align-items: flex-end;
+    padding-bottom: 10vh;
+    overflow: hidden;
+  }
+
+  .hero-bg {
+    position: absolute;
+    inset: 0;
+    background:
+      linear-gradient(160deg, rgba(10,18,55,0.90) 0%, rgba(26,42,94,0.82) 38%, rgba(140,20,20,0.55) 70%, rgba(180,30,10,0.30) 100%),
+      url('https://images.unsplash.com/photo-1504701954957-2010ec3bcec1?w=1600&q=80') center/cover no-repeat;
+  }
+
+  .hero-content {
+    position: relative;
+    z-index: 2;
+    padding: 0 6vw;
+    max-width: 820px;
+  }
+
+  .hero-eyebrow {
+    font-family: var(--heading-font);
+    font-size: 0.95rem;
+    font-weight: 600;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.60);
+    margin-bottom: 0.8rem;
+  }
+
+  .hero h1 {
+    font-family: var(--title-font);
+    font-size: clamp(4rem, 9vw, 8rem);
+    line-height: 0.95;
+    color: #fff;
+    text-transform: uppercase;
+    letter-spacing: 0.01em;
+    margin-bottom: 1rem;
+    text-shadow: 3px 3px 0 rgba(0,0,0,0.35);
+  }
+
+  .hero-subtitle {
+    font-family: var(--heading-font);
+    font-size: clamp(1.1rem, 2.2vw, 1.55rem);
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--yellow);
+    margin-bottom: 2.4rem;
+  }
+
+  .btn-primary {
+    display: inline-block;
+    background: var(--navy);
+    color: #fff;
+    font-family: var(--ui-font);
+    font-size: 1rem;
+    font-weight: 500;
+    padding: 0.85rem 2rem;
+    text-decoration: none;
+    transition: opacity 0.2s;
+  }
+  .btn-primary:hover { opacity: 0.85; }
+
+  /* STORY */
+  .story {
+    background: var(--bg);
+    padding: 7rem 6vw;
+  }
+
+  .section-label {
+    font-family: var(--heading-font);
+    font-size: 0.82rem;
+    font-weight: 600;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--navy);
+    margin-bottom: 1.2rem;
+  }
+
+  .story-inner { max-width: 680px; }
+
+  .story h2 {
+    font-family: var(--heading-font);
+    font-size: clamp(2.2rem, 4vw, 3.4rem);
+    font-weight: 800;
+    line-height: 1.05;
+    color: var(--navy);
+    text-transform: uppercase;
+    letter-spacing: 0.02em;
+    margin-bottom: 1.6rem;
+  }
+
+  .story p {
+    font-family: var(--body-font);
+    color: #333;
+    margin-bottom: 1.2rem;
+    font-size: 1.05rem;
+    line-height: 1.75;
+  }
+
+  /* PULL QUOTE */
+  .pull-quote {
+    background: var(--bg);
+    border-top: 1px solid #ddd5c8;
+    border-bottom: 1px solid #ddd5c8;
+    padding: 5rem 6vw;
+    text-align: center;
+  }
+
+  .pull-quote blockquote {
+    font-family: var(--body-font);
+    font-style: italic;
+    font-size: clamp(1.4rem, 2.6vw, 2rem);
+    line-height: 1.45;
+    color: var(--text);
+    max-width: 820px;
+    margin: 0 auto;
+  }
+
+  /* WHAT'S INSIDE */
+  .inside {
+    background: #1c1c1c;
+    padding: 6rem 6vw;
+  }
+
+  .inside .section-label { color: rgba(245,197,24,0.80); }
+
+  .inside h2 {
+    font-family: var(--title-font);
+    font-size: clamp(2.4rem, 5vw, 4rem);
+    color: #fff;
+    text-transform: uppercase;
+    letter-spacing: 0.02em;
+    margin-bottom: 3rem;
+    line-height: 1.0;
+  }
+
+  .chapters {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem 3rem;
+    max-width: 760px;
+  }
+
+  .chapter-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 1.1rem;
+  }
+
+  .chapter-num {
+    font-family: var(--title-font);
+    font-size: 2.4rem;
+    color: var(--yellow);
+    line-height: 1;
+    min-width: 1.8rem;
+  }
+
+  .chapter-text {
+    font-family: var(--body-font);
+    font-size: 0.95rem;
+    color: rgba(255,255,255,0.75);
+    padding-top: 0.4rem;
+    line-height: 1.5;
+  }
+
+  /* THIS IS FOR YOU */
+  .foryou {
+    background: var(--bg);
+    padding: 6rem 6vw;
+  }
+
+  .foryou h2 {
+    font-family: var(--heading-font);
+    font-size: clamp(2rem, 3.5vw, 3rem);
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.02em;
+    color: var(--navy);
+    margin-bottom: 2.2rem;
+    line-height: 1.05;
+  }
+
+  .foryou ul { list-style: none; max-width: 640px; }
+
+  .foryou ul li {
+    display: flex;
+    gap: 1rem;
+    padding: 0.9rem 0;
+    border-bottom: 1px solid #ddd5c8;
+    font-family: var(--body-font);
+    font-size: 1rem;
+    color: #333;
+    line-height: 1.55;
+  }
+
+  .foryou ul li:first-child { border-top: 1px solid #ddd5c8; }
+
+  .arrow {
+    color: var(--navy);
+    font-family: var(--heading-font);
+    font-weight: 700;
+    font-size: 1.2rem;
+    flex-shrink: 0;
+    padding-top: 0.05rem;
+  }
+
+  /* CTA BLOCK */
+  .cta-block {
+    background: var(--navy);
+    padding: 7rem 6vw;
+    text-align: center;
+  }
+
+  .cta-block h2 {
+    font-family: var(--title-font);
+    font-size: clamp(2.2rem, 5vw, 4.2rem);
+    color: #fff;
+    text-transform: uppercase;
+    line-height: 1.05;
+    letter-spacing: 0.02em;
+    margin-bottom: 2.8rem;
+    max-width: 860px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .cta-buttons {
+    display: flex;
+    gap: 1.2rem;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-bottom: 1.4rem;
+  }
+
+  .btn-white {
+    display: inline-block;
+    background: #fff;
+    color: var(--navy);
+    font-family: var(--ui-font);
+    font-size: 1rem;
+    font-weight: 500;
+    padding: 0.9rem 2.2rem;
+    text-decoration: none;
+    transition: opacity 0.2s;
+  }
+  .btn-white:hover { opacity: 0.88; }
+
+  .cta-meta {
+    font-family: var(--ui-font);
+    font-size: 0.9rem;
+    color: rgba(255,255,255,0.50);
+    letter-spacing: 0.05em;
+  }
+
+  /* FOOTER */
+  footer {
+    background: #111;
+    padding: 1.8rem 6vw;
+    text-align: center;
+  }
+
+  footer p {
+    font-family: var(--ui-font);
+    font-size: 0.85rem;
+    color: rgba(255,255,255,0.38);
+    letter-spacing: 0.03em;
+  }
+
+  footer a { color: rgba(255,255,255,0.5); text-decoration: none; }
+  footer a:hover { color: #fff; }
+
+  @media (max-width: 600px) {
+    .chapters { grid-template-columns: 1fr; }
+    .cta-buttons { flex-direction: column; align-items: center; }
+  }
+</style>
+</head>
+<body>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-content">
+    <p class="hero-eyebrow">Charles Donoghue &amp; Glenn Edley</p>
+    <h1>Light Your<br>Own Fire</h1>
+    <p class="hero-subtitle">How to Find Purpose in Your Life</p>
+    <a href="https://glennedley.gumroad.com/l/lyof" class="btn-primary">Get the Book — $5</a>
+  </div>
+</section>
+
+<!-- OPENING STORY -->
+<section class="story">
+  <div class="story-inner">
+    <p class="section-label">Why this book exists</p>
+    <h2>His ideas haven't gone anywhere.</h2>
+    <p>I co-wrote this book with my friend Charles Donoghue. He passed away a few years ago. But his ideas haven't. This book keeps his voice alive.</p>
+    <p>This is a practical guide to finding and living your purpose. Not the fluffy kind. The kind that changes how you show up every day.</p>
+  </div>
+</section>
+
+<!-- PULL QUOTE -->
+<section class="pull-quote">
+  <blockquote>
+    "We have met thousands of others who want that fire. This book will show you what they know."
+  </blockquote>
+</section>
+
+<!-- WHAT'S INSIDE -->
+<section class="inside">
+  <p class="section-label">What's inside</p>
+  <h2>241 pages. Everything<br>that actually matters.</h2>
+  <div class="chapters">
+    <div class="chapter-item">
+      <span class="chapter-num">1</span>
+      <span class="chapter-text">Purpose — what it really means and how to find yours</span>
+    </div>
+    <div class="chapter-item">
+      <span class="chapter-num">2</span>
+      <span class="chapter-text">Mental Posture — the mindset that makes everything possible</span>
+    </div>
+    <div class="chapter-item">
+      <span class="chapter-num">3</span>
+      <span class="chapter-text">Focus — cutting through the noise to what counts</span>
+    </div>
+    <div class="chapter-item">
+      <span class="chapter-num">4</span>
+      <span class="chapter-text">Courage — how to act despite fear or uncertainty</span>
+    </div>
+    <div class="chapter-item">
+      <span class="chapter-num">5</span>
+      <span class="chapter-text">Belief — building the conviction to keep going</span>
+    </div>
+    <div class="chapter-item">
+      <span class="chapter-num">6</span>
+      <span class="chapter-text">Summary — putting it all together and making it stick</span>
+    </div>
+  </div>
+</section>
+
+<!-- THIS IS FOR YOU -->
+<section class="foryou">
+  <p class="section-label">This is for you if</p>
+  <h2>You're ready to be driven<br>by something bigger.</h2>
+  <ul>
+    <li><span class="arrow">→</span><span>You want to be driven by something bigger than a to-do list</span></li>
+    <li><span class="arrow">→</span><span>You feel busy but not purposeful</span></li>
+    <li><span class="arrow">→</span><span>You've read motivational books that weren't written for you</span></li>
+    <li><span class="arrow">→</span><span>You want something direct, practical, and short enough to finish</span></li>
+  </ul>
+</section>
+
+<!-- CTA BLOCK -->
+<section class="cta-block">
+  <h2>It won't change your life overnight.<br>But it might change how you see it.</h2>
+  <div class="cta-buttons">
+    <a href="https://glennedley.gumroad.com/l/lyof" class="btn-white">Get the PDF — $5</a>
+    <a href="https://a.co/d/0bWr7192" class="btn-white">Buy on Amazon</a>
+  </div>
+  <p class="cta-meta">241 pages · Instant PDF download · Also available in print</p>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <p>© Glenn Edley · <a href="https://lightyourownfire.com">lightyourownfire.com</a></p>
+</footer>
+
+</body>
+</html>
